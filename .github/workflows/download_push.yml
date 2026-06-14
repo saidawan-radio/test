@@ -24,6 +24,9 @@ jobs:
         python -m pip install -r requirements.txt --upgrade pip
         
     - name: Debug API_ID
+      env:
+        API_ID: ${{ secrets.API_ID }}
+        
       run: |
        echo "API_ID value: '${{ vars.API_ID }}'"  
        echo "API_ID from secrets: '${{ secrets.API_ID }}'"
