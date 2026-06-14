@@ -24,6 +24,19 @@ jobs:
         python -m pip install -r requirements.txt --upgrade pip
     
     - name: Run download script
+      env:
+            API_ID: ${{ secrets.API_ID }}
+            API_HASH: ${{ secrets.API_HASH }}
+            CHANNEL_USERNAME: ${{ vars.CHANNEL_USERNAME }}
+            DOWNLOAD_PATH: ${{ vars.DOWNLOAD_PATH }}
+            DATA_FILE_PATH: ${{ vars.DATA_FILE_PATH }}
+            DATE_FORMAT: ${{ vars.DATE_FORMAT }}
+            LOAD_START_DATE: ${{ vars.LOAD_START_DATE }}
+            DURATION_LIMIT: ${{ vars.DURATION_LIMIT }}
+            MIN_MSG_ID: ${{ vars.MIN_MSG_ID }}
+            DATA_FETCH_LIMIT: ${{ vars.DATA_FETCH_LIMIT }}
+            FILENAME_PATTERN: ${{ vars.FILENAME_PATTERN }}
+            
       run: python3 audio_downloader.py
     
     - name: Commit and push changes
