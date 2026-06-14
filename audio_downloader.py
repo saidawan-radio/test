@@ -11,6 +11,7 @@ from config import conf
 
 API_ID = int(conf.API_ID)
 API_HASH = conf.API_HASH
+print(conf.SESSION_STR)
 SESSION_OBJ=StringSession(conf.SESSION_STR)
 
 CHANNEL_USERNAME = conf.CHANNEL_USERNAME
