@@ -6,7 +6,7 @@ on:
 jobs:
     download-and-push:
         runs-on: ubuntu-latest
-        environment: production
+        environment: testenv
 
         steps:
             - name: Checkout repository
