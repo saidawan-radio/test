@@ -22,7 +22,12 @@ jobs:
     - name: Install dependencies
       run: |
         python -m pip install -r requirements.txt --upgrade pip
-    
+        
+    - name: Debug API_ID
+      run: |
+       echo "API_ID value: '${{ vars.API_ID }}'"  
+       echo "API_ID from secrets: '${{ secrets.API_ID }}'"
+      
     - name: Run download script
       env:
             SESSION_STR: ${{ secrets.SESSION_STR }}
