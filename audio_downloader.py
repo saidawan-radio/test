@@ -24,8 +24,6 @@ DATA_FETCH_LIMIT = int(conf.DATA_FETCH_LIMIT)
 DATA_FETCH_SIZE_LIMIT = conf.DATA_FETCH_SIZE_LIMIT
 FILENAME_PATTERN = conf.FILENAME_PATTERN
 
-proxy=("http", "127.0.0.1", 10808)
-
 #-----------------------------------------------------
 #---------------- Define Functions -------------------
 
@@ -102,7 +100,7 @@ async def download_all_audio_detail(client:TelegramClient, chat, data):
         
 
 async def main():
-    client = TelegramClient(SESSION_OBJ, API_ID, API_HASH, proxy=proxy)
+    client = TelegramClient(SESSION_OBJ, API_ID, API_HASH)
     await client.start()
     channel = await client.get_entity(CHANNEL_USERNAME)
     await audio_detail_fetcher(client, channel, MIN_MSG_ID, DATA_FETCH_LIMIT, DURATION_LIMIT, data)
