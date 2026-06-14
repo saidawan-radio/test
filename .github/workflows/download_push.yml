@@ -29,7 +29,7 @@ jobs:
                   API_ID: ${{ secrets.API_ID }}
 
               run: |
-                  echo "API_ID value: '${{ vars.API_ID }}'"  
+                  echo "API_ID value: '${{ vars.DOWNLOAD_PATH }}'"  
                   echo "API_ID from secrets: '${{ secrets.API_ID }}'"
 
             - name: Run download script
